@@ -1,0 +1,276 @@
+$breakpoints-up: (
+"xs": "min-width: 480px",
+"sm": "min-width: 576px",
+"md": "min-width: 768px",
+"lg": "min-width: 992px",
+"xl": "min-width: 1200px",
+"xxl": "min-width: 1400px",
+);
+
+@mixin media-breakpoint-up($user-value) { 
+    $my-map: map-get($breakpoints-up, $user-value); 
+    @if $my-map {
+        @media (#{$my-map}) {
+            @content;
+        }
+    }
+    @else {
+        @error "Opps, seems like the breakpoint is missing ";
+    }
+}
+
+$breakpoints-down: (
+"sm": "max-width: 575.98px",
+"md": "max-width: 767.98px",W
+"lg": "max-width: 991.98px",
+"xl": "max-width: 1199.98px",
+"xxl": "max-width: 1399.98px",
+"3xl": "max-width: 1599.98px",
+"4xl": "max-width: 1799.98px",
+);
+
+@mixin media-breakpoint-down($user-value) { 
+    $my-map: map-get($breakpoints-down, $user-value); 
+    @if $my-map {
+        @media (#{$my-map}) {
+            @content;
+        }
+    }
+    @else {
+        @error "Opps, seems like the breakpoint is missing ";
+    }
+}
+
+@mixin media-breakpoint-up-custom($custom_breakpoint) {
+    @media only screen and (min-width: $custom_breakpoint) {
+        @content;
+    }
+}
+
+
+
+@mixin global-font {
+    @include font-format(15pt, 1.4);
+    font-family: $font-family-base;
+    color: $body-color;
+}
+
+@mixin font-format($size, $lh: 1.4) {
+    font-size: $size;
+    line-height: $lh;
+}
+
+@mixin heading {
+    font-family: $headings-font-family;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-weight: $fw-bold;
+}
+
+@mixin h1 {
+    @include heading;
+    @include font-format(23pt);
+
+    @include media-breakpoint-up(md) {
+        @include font-format(28pt);
+    }
+    @include media-breakpoint-up(lg) {
+        @include font-format(32pt);
+    }
+    @include media-breakpoint-up(xl) {
+        @include font-format(36pt);
+    }
+}
+
+@mixin h2 {
+    @include heading;
+    @include font-format(30pt);
+}
+
+@mixin h3 {
+    @include heading;
+    @include font-format(26pt);
+}
+
+@mixin h4 {
+    @include heading;
+    @include font-format(22pt);
+}
+
+@mixin h5 {
+    @include heading;
+    @include font-format(18pt);
+}
+
+@mixin h6 {
+    @include heading;
+    @include font-format(14pt);
+}
+
+@mixin transition-standard {
+    transition: all .4s ease-out;
+    transition-timing-function: cubic-bezier(0.400,0.000,0.200,1.000);
+}
+
+
+
+@mixin btn( $variation:"" ) {
+    @include transition-standard;
+    @include font-format(15pt);
+    min-height: 40px;
+    font-family: $font-family-base;
+    font-weight: $fw-bold;
+    color: #fff;
+    text-transform: uppercase;
+    background-color: $brand-primary;
+    padding: 5px 20px;
+    box-sizing: border-box;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    border-radius: 0;
+
+    @include media-breakpoint-up-custom(992px) {
+        min-height: 50px;
+        padding: 5px 30px;
+    }
+
+    &:hover,
+    &:focus {
+        color: #fff;
+        background-color: $btn-hover;
+        outline: none;
+        box-shadow: none;
+    }
+
+    @if $variation == inverted {
+        background-color: transparent;
+        color: $brand-primary;
+        border: 2px solid $brand-primary;
+
+        &:hover,
+        &:focus {
+            background-color: $btn-hover;
+            border-color: $btn-hover;
+            color: #fff;
+        }
+    }
+
+    @if $variation == grey {
+        background-color: $fill-grey-light;
+        color: $brand-secondary;
+
+        &:hover,
+        &:focus {
+            background-color: $brand-secondary;
+            color: #fff;
+        }
+    }
+
+    @if $variation == icon {
+        padding-right: 32px;
+
+        @include media-breakpoint-up-custom(992px) {
+            padding-right: 45px;
+        }
+        
+        &:after {
+            @include transition-standard;
+            content: "";
+            width: 8px;
+            height: 8px;
+            border: 3px solid #fff;
+            border-bottom: 0;
+            border-left: 0;
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%) rotate(45deg);
+            @include media-breakpoint-up-custom(992px) {
+                right: 27px;
+            }
+        }
+
+        &:hover {
+
+            &:after {
+                right: 10px;
+
+                @include media-breakpoint-up-custom(992px) {
+                    right: 20px;
+                }
+            }
+        }
+    }
+}
+
+@mixin cover-overlay ($color: "#000" , $opacity: "0.5") {
+    position: relative;
+
+    &:after {
+        content: " ";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba($color, $opacity);
+    }
+}
+
+@mixin section-head-grouped($color: $body-color, $arcColor: $body-color, $headlineColor: $body-color) {
+
+    .sec__head--title {
+        color: $color;
+        display: flex;
+        align-items: center;
+        margin-bottom: 15px;
+
+        @include media-breakpoint-up(md) {        
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            @include font-format(13.5pt);
+            text-transform: uppercase;
+            font-weight: 400;
+
+            @include media-breakpoint-up(md) {
+                @include font-format(15pt);
+            }
+        }
+    
+        .sec__head--title-arc {
+            flex: 1;
+            margin-left: 36px;
+            height: 1px;
+            display: block;
+            background-color: $arcColor;
+        }
+    }
+
+    .sec__head--headline {
+        @include font-format(12pt);
+        max-width: 988px;
+        width: 100%;
+        margin: 0 auto;
+        color: $headlineColor;
+        font-weight: $fw-light;
+
+        @include media-breakpoint-up(md) {
+            @include font-format(13pt);
+        }
+
+        @include media-breakpoint-up(lg) {
+            @include font-format(14pt);
+        }
+
+        @include media-breakpoint-up(xl) {
+            @include font-format(15pt);
+        }
+    }
+}

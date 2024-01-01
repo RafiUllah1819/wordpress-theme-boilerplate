@@ -1,0 +1,16 @@
+@import 'partials/_global';
+@import 'partials/_mixins';
+@import 'partials/_elements';
+@import 'partials/_header';
+@import 'partials/_footer';
+@import 'partials/_mobile-nav';
+
+// home
+@import 'partials/home/_home-hero';
+@import 'partials/home/_home-about-note';
+@import 'partials/home/_home-about-banner';
+@import 'partials/home/_home-services';
+@import 'partials/home/_home-video-gallery';
+@import 'partials/home/_home-testimonials';
+@import 'partials/home/_home-teams';
+@import 'partials/home/_home-contact-us';

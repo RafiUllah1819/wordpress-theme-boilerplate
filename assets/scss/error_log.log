@@ -1,0 +1,52 @@
+04/26/23 9:06:00: style.scss - Undefined mixin media-breakpoint-up: partials/_menu.scss on line 6, at column 5
+Call Stack:
+#0 import partials/_menu.scss style.scss on line 3
+04/26/23 9:51:07: style.scss - Undefined mixin global-font: partials/_global.scss on line 23, at column 5
+Call Stack:
+#0 import partials/_global.scss style.scss on line 1
+04/26/23 9:53:08: style.scss - Undefined mixin global-font: partials/_global.scss on line 23, at column 5
+Call Stack:
+#0 import partials/_global.scss style.scss on line 1
+04/27/23 12:56:05: style.scss - Only 1 argument allowed, but 2 were passed.: partials/_elements.scss on line 76, at column 5
+Call Stack:
+#0 import partials/_elements.scss style.scss on line 3
+04/27/23 12:56:10: style.scss - Only 1 argument allowed, but 2 were passed.: partials/_elements.scss on line 76, at column 5
+Call Stack:
+#0 import partials/_elements.scss style.scss on line 3
+09/27/23 2:46:29: style.scss - `partials/home/_featured` file not found for @import: style.scss on line 9, at column 1
+09/27/23 4:18:32: style.scss - `partials/home/_hero` file not found for @import: style.scss on line 8, at column 1
+09/27/23 4:20:33: style.scss - `partials/home/_hero` file not found for @import: style.scss on line 8, at column 1
+12/30/23 8:21:01: style.scss - Undefined variable $fill-black-faded: partials/_footer.scss on line 3, at column 5
+Call Stack:
+#0 import partials/_footer.scss style.scss on line 5
+12/30/23 8:21:05: style.scss - Undefined variable $fill-black-faded: partials/_footer.scss on line 3, at column 5
+Call Stack:
+#0 import partials/_footer.scss style.scss on line 5
+12/30/23 8:21:06: style.scss - Undefined variable $fill-black-faded: partials/_footer.scss on line 3, at column 5
+Call Stack:
+#0 import partials/_footer.scss style.scss on line 5
+12/30/23 8:47:16: style.scss - Undefined variable $fill-yellow: partials/home/_home-testimonials.scss on line 71, at column 17
+Call Stack:
+#0 import partials/home/_home-testimonials.scss style.scss on line 14
+12/30/23 8:49:16: style.scss - Undefined variable $fill-grey-light: partials/_mixins.scss on line 164, at column 9
+Call Stack:
+#0 mixin btn partials/_elements.scss on line 76
+#1 import partials/_elements.scss style.scss on line 3
+12/30/23 8:51:17: style.scss - Undefined variable $fill-grey-light: partials/_mixins.scss on line 164, at column 9
+Call Stack:
+#0 mixin btn partials/_elements.scss on line 76
+#1 import partials/_elements.scss style.scss on line 3
+12/30/23 8:52:43: style.scss - Undefined variable $fill-grey-light: partials/_mixins.scss on line 164, at column 9
+Call Stack:
+#0 mixin btn partials/_elements.scss on line 76
+#1 import partials/_elements.scss style.scss on line 3
+12/30/23 8:53:43: style.scss - Undefined variable $fill-light: partials/_mixins.scss on line 164, at column 9
+Call Stack:
+#0 mixin btn partials/_elements.scss on line 76
+#1 import partials/_elements.scss style.scss on line 3
+12/30/23 8:55:13: style.scss - Undefined variable $fill-grey-light: partials/_header.scss on line 164, at column 17
+Call Stack:
+#0 import partials/_header.scss style.scss on line 4
+12/30/23 8:56:13: style.scss - Undefined variable $fill-grey-light: partials/_header.scss on line 164, at column 17
+Call Stack:
+#0 import partials/_header.scss style.scss on line 4
